@@ -12,9 +12,7 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        $perPage = 1;
-        $recipes = Recipe::latest()->paginate($perPage);
-        return view('recipe.index', compact(var_name: 'recipes'));
+        return view('recipe.index');
     }
 
     /**
