@@ -1,5 +1,6 @@
  <!-- Table des recettes -->
  <div class="overflow-x-auto">
+    <input type="text" name="search" wire:model.live="search">
     <table class="min-w-full bg-gray-50 shadow-md rounded-lg border-collapse">
         <thead>
             <tr class="bg-blue-600 text-white">
