@@ -41,10 +41,11 @@ class RecipeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        return view('recipe.show', ['recipeId' => $id]);
     }
+
 
     /**
      * Show the form for editing the specified resource.

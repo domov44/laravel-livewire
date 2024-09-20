@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Recipes;
 
 use App\Models\Recipe;
 use Livewire\Component;
 
-class RecipeEdit extends Component
+class Edit extends Component
 {
     public $recipeId;
     public $title;
