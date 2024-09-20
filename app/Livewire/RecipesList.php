@@ -18,6 +18,7 @@ class RecipesList extends Component
     }
 
     #[On('recipe-created')]
+    #[On('recipe-updated')]
 
     public function render()
     {

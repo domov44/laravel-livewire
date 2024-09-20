@@ -25,9 +25,4 @@ class RecipeCreate extends Component
         $this->dispatch('recipe-created');
         $this->reset();
     }
-
-    public function render()
-    {
-        return view('livewire.recipe-create');
-    }
 }
