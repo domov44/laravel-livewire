@@ -21,6 +21,9 @@ class RecipeCreate extends Component
         ]);
 
         Recipe::create(attributes: $data);
+
+        $this->dispatch('recipe-created');
+        $this->reset();
     }
 
     public function render()

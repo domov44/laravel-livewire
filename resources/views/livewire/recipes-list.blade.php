@@ -13,7 +13,7 @@
         </thead>
         <tbody>
             @foreach ($recipes as $recipe)
-                <tr class="bg-white hover:bg-gray-100 transition duration-300 border-b">
+                <tr class="bg-white hover:bg-gray-100 transition duration-300 border-b" wire:key="{{$recipe->id}}" wire:key="recipe-{{ $recipe->id }}">
                     <td class="py-3 px-4 font-semibold text-gray-700">{{ $recipe->title }}</td>
                     <td class="py-3 px-4 text-gray-600">{{ str($recipe->description)->words(4) }}</td>
                     <td class="py-3 px-4 text-gray-600">{{ $recipe->duration }} minutes</td>

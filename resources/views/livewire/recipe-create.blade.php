@@ -1,9 +1,10 @@
- <div class="mb-4" x-data="{ open: false }" x-on:click.away="open = false">
-     <a x-on:click.prevent="open = ! open" href="#"
+ <div class="mb-4" x-data x-on:recipe-created="$refs.modal.hidePopover()">
+     <a x-on:click.prevent="$refs.modal.showPopover()" href="#"
          class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded shadow-md transition duration-300">
          Ajouter une nouvelle recette
      </a>
-     <dialog :open="open" class="bg-white rounded-lg shadow-lg p-6 w-full max-w-3xl mx-auto">
+     <div popover x-ref="modal"
+         class="bg-white rounded-lg shadow-lg p-6 w-full max-w-3xl mx-auto backdrop:bg-slate-500/20">
          <h2 class="text-2xl font-bold mb-6 text-center">Créer une Recette</h2>
          <form class="space-y-6" wire:submit="create">
              @csrf
@@ -40,13 +41,19 @@
                      </div>
                  @enderror
              </div>
-             <div>
-                 <button type="submit"
-                     class="w-full inline-flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                     Envoyer
-                 </button>
+             <div class="flex justify-end">
+                 <div class="flex space-x-4">
+                     <button type="submit"
+                         class="w-full inline-flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                         Envoyer
+                     </button>
+
+                     <button type="button" x-on:click="$refs.modal.hidePopover()"
+                         class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                         Annuler
+                     </button>
+                 </div>
              </div>
          </form>
-     </dialog>
-
+     </div>
  </div>
