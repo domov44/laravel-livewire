@@ -26,7 +26,7 @@ class Edit extends Component
         $data = $this->validate([
             "title" => 'required',
             "description" => 'nullable|min:20',
-            'steps' => 'required|array|min:1',
+            'steps' => 'present|array|min:1',
             'steps.*.duration' => 'required|integer|min:1',
             'steps.*.description' => 'required|string|min:5',
         ]);

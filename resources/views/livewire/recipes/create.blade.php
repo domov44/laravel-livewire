@@ -68,7 +68,7 @@
                 </template>
                 <button type="button" x-on:click="$wire.steps.push({ step_number: $wire.steps.length + 1, duration: '', description: '' }); isOpen[$wire.steps.length - 1] = true"
                     class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow-md transition duration-300">
-                    Ajouter une étape
+                    <i class="fas fa-plus mr-2"></i>Ajouter une étape
                 </button>
             </div>
 

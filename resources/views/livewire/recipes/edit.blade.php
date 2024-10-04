@@ -2,7 +2,7 @@
     <button x-on:click.prevent="$refs.editmodal.showPopover()"
         class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-2 rounded-full shadow-md">
         <i class="fas fa-edit"></i>
-</button>
+    </button>
     <div popover x-ref="editmodal"
         class="bg-white rounded-lg shadow-lg p-6 w-full max-w-3xl mx-auto backdrop:bg-slate-500/20">
         <h2 class="text-2xl font-bold mb-6 text-center">Modifier la recette</h2>
@@ -58,6 +58,14 @@
                     </div>
                 </div>
             </template>
+            <button type="button"
+                x-on:click="$wire.steps.push({ step_number: $wire.steps.length + 1, duration: '', description: '' }); isOpen[$wire.steps.length - 1] = true"
+                class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow-md transition duration-300">
+                <i class="fas fa-plus mr-2"></i>Ajouter une étape
+            </button>
+            @error('steps')
+                {{ $message }}
+            @enderror
             <div class="flex justify-end">
                 <div class="flex space-x-4">
                     <button type="submit"
