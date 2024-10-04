@@ -10,7 +10,7 @@ class Edit extends Component
     public $recipeId;
     public $title;
     public $description;
-    public $duration;
+    public $steps;
 
     public function mount($recipeId)
     {
@@ -18,7 +18,7 @@ class Edit extends Component
         $this->recipeId = $recipe->id;
         $this->title = $recipe->title;
         $this->description = $recipe->description;
-        $this->duration = $recipe->duration;
+        $this->steps = $recipe->steps;
     }
 
     public function update()
@@ -26,7 +26,9 @@ class Edit extends Component
         $data = $this->validate([
             "title" => 'required',
             "description" => 'nullable|min:20',
-            "duration" => 'nullable|integer|min:1|max:999',
+            'steps' => 'required|array|min:1',
+            'steps.*.duration' => 'required|integer|min:1',
+            'steps.*.description' => 'required|string|min:5',
         ]);
 
         $recipe = Recipe::findOrFail($this->recipeId);

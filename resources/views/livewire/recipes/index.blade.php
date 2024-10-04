@@ -26,7 +26,7 @@
                      <td class="py-3 px-4 text-gray-600">{{ str($recipe->description)->words(4) }}</td>
                      <td class="py-3 px-4 text-gray-600">{{ $recipe->duration }} minutes</td>
                      <td class="py-3 px-4 text-gray-500">{{ $recipe->created_at->diffForHumans() }}</td>
-                     <td class="py-3 px-4 text-center">
+                     <td class="py-3 px-4 flex gap-1 items-center justify-center">
                          <livewire:recipes.edit :recipeId="$recipe->id" wire:key="recipe-edit-{{ $recipe->id }}" />
                          <livewire:recipes.delete :recipeId="$recipe->id" wire:key="recipe-delete-{{ $recipe->id }}" />
                      </td>
