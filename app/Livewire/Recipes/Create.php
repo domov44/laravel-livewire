@@ -24,6 +24,7 @@ class Create extends Component
 
         Recipe::create($data);
         $this->dispatch('recipe-created');
+        $this->dispatch('toast', title: 'Recette ajoutée avec succès', variant: 'success');
         $this->reset();
     }
 

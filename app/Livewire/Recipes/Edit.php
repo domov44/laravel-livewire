@@ -35,5 +35,6 @@ class Edit extends Component
         $recipe->update($data);
 
         $this->dispatch('recipe-updated');
+        $this->dispatch('toast', title: 'Recette mise à jour avec succès', variant: 'success');
     }
 }

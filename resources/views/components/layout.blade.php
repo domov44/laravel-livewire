@@ -12,6 +12,7 @@
 
 <body class="bg-slate-50">
     {{ $slot }}
+    <x-toast />
 </body>
 
 </html>

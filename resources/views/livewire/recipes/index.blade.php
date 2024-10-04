@@ -1,11 +1,15 @@
  <div class="overflow-x-auto">
-     <div class="flex justify-between">
-         <input type="text" name="search" wire:model.live="search">
+     <div class="flex justify-between align-center">
+             <div class="relative h-fit">
+                 <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                 <input type="text" name="search" wire:model.live="search" placeholder="Rechercher..."
+                     class="max-w-sm pl-10 pr-4 py-2 border border-blue-300 rounded-lg shadow-sm" />
+             </div>
          <livewire:recipes.create />
      </div>
      <table class="min-w-full bg-gray-50 shadow-md rounded-lg border-collapse">
          <thead>
-             <tr class="bg-blue-600 text-white">
+             <tr class="bg-gray-600 text-white">
                  <th class="py-3 px-4 border-b border-gray-300">Index</th>
                  <th class="py-3 px-4 border-b border-gray-300">Titre</th>
                  <th class="py-3 px-4 border-b border-gray-300">Description</th>

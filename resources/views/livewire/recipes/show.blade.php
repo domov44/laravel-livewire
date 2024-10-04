@@ -16,7 +16,7 @@
                     {{ $step['description'] }}
                 </p>
                 <p class="text-gray-500 mt-1">
-                    <strong>Durée :</strong> {{ $step['duration'] }}
+                    <strong>Durée :</strong> {{ $step['duration'] }} minutes
                 </p>
             </div>
         @endforeach
